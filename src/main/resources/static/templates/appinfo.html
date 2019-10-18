@@ -1,0 +1,12 @@
+<div class="panel panel-primary" ng-controller="InfoController">
+    <div class="panel-heading">
+        <h3 class="panel-title">App Info</h3>
+    </div>
+    <div class="panel-body">
+        <ul>
+            <li><strong>App Index:</strong> {{info.index}}</li>
+            <li><strong>Profiles:</strong> {{info.profiles.join()}}</li>
+            <li><strong>Services:</strong> {{info.services.join()}}</li>
+        </ul>
+    </div>
+</div>

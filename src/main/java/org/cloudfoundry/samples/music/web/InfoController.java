@@ -19,13 +19,16 @@ public class InfoController {
     private Environment springEnvironment;
 
     @Autowired
+    private Environment environment;
+
+    @Autowired
     public InfoController(Environment springEnvironment) {
         this.springEnvironment = springEnvironment;
     }
 
     @RequestMapping(value = "/appinfo")
     public ApplicationInfo info() {
-        return new ApplicationInfo(springEnvironment.getActiveProfiles(), getServiceNames());
+        return new ApplicationInfo(springEnvironment.getActiveProfiles(), getServiceNames(), environment.getProperty("CF_INSTANCE_INDEX"));
     }
 
     @RequestMapping(value = "/service")
